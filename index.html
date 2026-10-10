@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadores de LIO / Oftalmología</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for medical icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#026597',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 50%, #bae0fd 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .link-card {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -10px rgba(2, 132, 199, 0.25);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased py-8 px-4 sm:px-6">
+
+    <div class="max-w-2xl mx-auto">
+
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center justify-center p-4 bg-white rounded-full shadow-md mb-4 text-medical-600 ring-4 ring-medical-100">
+                <i class="fa-solid fa-eye text-3xl"></i>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-1">
+                LINKS de Calculadores Online
+            </h1>
+            <p class="text-sm sm:text-base text-medical-800 font-medium mb-1">
+                Calculadores de LIO / Oftalmología
+            </p>
+            <p class="text-xs text-slate-500 max-w-md mx-auto">
+                Acceso rápido a las mejores herramientas de cálculo para cirugía de catarata y refractiva.
+            </p>
+        </header>
+
+        <!-- SEARCH BAR -->
+        <div class="relative mb-6">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </div>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Buscar por nombre, entidad o fórmula (ej. Kane, EVO, Post-Lasik)..." 
+                class="w-full pl-11 pr-10 py-3 bg-white/90 backdrop-blur-sm border border-slate-200 rounded-xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-medical-500 focus:border-transparent transition"
+            >
+            <button 
+                id="clearSearch" 
+                onclick="clearSearchInput()" 
+                class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600"
+            >
+                <i class="fa-solid fa-circle-xmark text-sm"></i>
+            </button>
+        </div>
+
+        <!-- LINK LIST CONTAINER -->
+        <main id="linksList" class="space-y-4">
+
+            <!-- Card 1: ASCRS -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="ascrs american society cataract refractive surgery post lasik prk kr">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">ASCRS</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">American Society Cataract and Refractive Surgery</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> Post Lasik / PRK / KR
+                        </p>
+                    </div>
+                    <a href="https://iolcalc.ascrs.org/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: APACRS -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="apacrs asia pacific association cataract refractive surgeons buii btk m-pca p-pca">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">APACRS</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">Asia Pacific Association of Cataract & Refractive Surgeons</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> BUII, BTK m-PCA y p-PCA
+                        </p>
+                    </div>
+                    <a href="https://www.apacrs.org/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: ESCRS -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="escrs european society cataract refractive surgeons buii cooke 6 evo hill rbf hoffer qst kane pearl dgs">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">ESCRS</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">European Society of Cataract and Refractive Surgeons</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> BUII, Cooke 6, EVO, Hill-RBF, Hoffer QST, Kane y Pearl-DGS
+                        </p>
+                    </div>
+                    <a href="https://iolcalculator.escrs.org/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: KANE -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="kane formula kcn iolformula">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">KANE</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">Kane Fórmula</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> Kane y Kane KCN
+                        </p>
+                    </div>
+                    <a href="https://www.iolformula.com/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: EVO -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="evo formula v2.0 2.0 post lasik prk evoiolcalculator">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">EVO</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">EVO Fórmula v 2.0</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> EVO v2.0 y EVO (Post Lasik/PRK)
+                        </p>
+                    </div>
+                    <a href="https://www.evoiolcalculator.com/calculator.aspx" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: HOFFER -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="hoffer qst formula naeser savini toric calculator post lasik prk">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">HOFFER</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">Hoffer® QST Formula & Naeser/Savini Toric</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> HofferQST (también para Post Lasik/PRK)
+                        </p>
+                    </div>
+                    <a href="https://www.hofferqst.com" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 7: PEARLS DGS -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="pearls dgs postoperative spherical equivalent prediction artificial intelligence linear algorithms pearl iolsolver ojos complejos kr">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">PEARLS DGS</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">PEARL (Artificial Intelligence)</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> Postoperative spherical Equivalent prediction (ojos complejos KR)
+                        </p>
+                    </div>
+                    <a href="https://iolsolver.com/result_complex" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 8: Multicalculador Facoelche -->
+            <div class="link-item glass-card rounded-2xl p-4 sm:p-5 shadow-sm border border-white/80" data-keywords="multicalculador facoelche astigmatism tools multiples formulas">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 text-xs font-bold bg-medical-100 text-medical-800 rounded-md">Multicalculador</span>
+                            <h2 class="font-semibold text-slate-900 text-sm sm:text-base">Facoelche Astigmatism Tools</h2>
+                        </div>
+                        <p class="text-xs text-slate-600 flex items-center gap-1.5 pt-1">
+                            <i class="fa-solid fa-square-poll-vertical text-medical-500"></i>
+                            <span class="font-medium text-slate-700">Fórmulas / Detalle:</span> Múltiples fórmulas y herramientas de astigmatismo
+                        </p>
+                    </div>
+                    <a href="https://www.facoelche.com/astigmatism-tools/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-4 py-2 bg-medical-600 hover:bg-medical-700 text-white text-xs font-semibold rounded-xl shadow-sm hover:shadow transition-all shrink-0 gap-1.5">
+                        <span>Ir al calculador</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-10 bg-white/50 rounded-2xl border border-dashed border-slate-300">
+                <i class="fa-solid fa-magnifying-glass text-2xl text-slate-400 mb-2"></i>
+                <p class="text-slate-600 text-sm font-medium">No se encontraron calculadores con ese término.</p>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="githubModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-slate-100 rounded-lg text-slate-800">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Desplegar gratis en GitHub Pages</h3>
+            </div>
+
+            <ol class="list-decimal list-inside text-xs sm:text-sm text-slate-700 space-y-3">
+                <li>Crea una cuenta en <a href="https://github.com" target="_blank" class="text-medical-600 underline font-medium">GitHub.com</a> si aún no tienes una.</li>
+                <li>Crea un **nuevo repositorio público** (ej. <code class="bg-slate-100 px-1 py-0.5 rounded text-medical-800">calculadores-lio</code>).</li>
+                <li>Crea un archivo nuevo dentro del repositorio llamado **<code class="bg-slate-100 px-1 py-0.5 rounded text-medical-800">index.html</code>**.</li>
+                <li>Copia todo el código fuente de este documento y pégalo en el archivo <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800">index.html</code>. Guarda/Commitea los cambios.</li>
+                <li>Ve a **Settings** (Configuración) de tu repositorio &gt; **Pages** (en el menú lateral izquierdo).</li>
+                <li>En **Branch** (Rama), selecciona <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800">main</code> (o <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800">master</code>) y carpeta <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800">/ (root)</code>, luego haz clic en **Save**.</li>
+                <li>¡Listo! En 1 o 2 minutos tendrás tu enlace web público tipo: <br><code class="bg-slate-100 px-1.5 py-1 rounded text-medical-700 font-mono text-[11px] block mt-1">https://tu-usuario.github.io/calculadores-lio/</code></li>
+            </ol>
+
+            <button 
+                onclick="toggleModal()" 
+                class="mt-6 w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs rounded-xl shadow transition"
+            >
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearSearch');
+        const linkItems = document.querySelectorAll('.link-item');
+        const noResults = document.getElementById('noResults');
+
+        // Real-time Search functionality
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            let matches = 0;
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            linkItems.forEach(item => {
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                const contentText = item.innerText.toLowerCase();
+
+                if (keywords.includes(query) || contentText.includes(query)) {
+                    item.style.display = 'block';
+                    matches++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (matches === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        });
+
+        function clearSearchInput() {
+            searchInput.value = '';
+            searchInput.dispatchEvent(new Event('input'));
+            searchInput.focus();
+        }
+
+        // Toggle modal visibility
+        function toggleModal() {
+            const modal = document.getElementById('githubModal');
+            modal.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
